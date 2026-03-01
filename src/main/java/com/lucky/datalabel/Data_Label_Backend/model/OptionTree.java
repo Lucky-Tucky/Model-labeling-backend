@@ -3,18 +3,19 @@ package com.lucky.datalabel.Data_Label_Backend.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Image {
+public class OptionTree {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(nullable = false)
-    private String filename;
+    private String label;
 
     @Column(nullable = false)
-    private byte[] file;
+    private int level;
 
-    @OneToOne(mappedBy = "image", cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "options_id")
     private Options options;
 }

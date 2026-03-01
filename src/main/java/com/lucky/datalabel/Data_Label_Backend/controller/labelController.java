@@ -7,7 +7,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/label")
 public class labelController {
-
-    @GetMapping("/options")
-    public
 }
