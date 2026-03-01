@@ -2,12 +2,14 @@ package com.lucky.datalabel.Data_Label_Backend.model;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Entity
 public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private int id;
+    private UUID id;
 
     @Column(nullable = false)
     private String filename;

@@ -3,13 +3,14 @@ package com.lucky.datalabel.Data_Label_Backend.model;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 public class Options {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private int id;
+    private UUID id;
 
     @OneToOne
     @JoinColumn(name = "image_id")
