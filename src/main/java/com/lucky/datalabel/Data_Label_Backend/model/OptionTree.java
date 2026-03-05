@@ -1,9 +1,9 @@
 package com.lucky.datalabel.Data_Label_Backend.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
-import java.util.UUID;
-
+@Builder
 @Entity
 public class OptionTree {
 

@@ -6,28 +6,23 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.UUID;
 
 @Builder
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Options {
+@Entity
+public class OptionLabel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @OneToOne
-    @JoinColumn(name = "image_id", unique = true)
-    private Image image;
+    @Column(nullable = false)
+    private String label;
 
-    @OneToMany(mappedBy = "options", cascade = CascadeType.ALL)
-    private List<OptionTree> optionTree;
-
-    @OneToMany(mappedBy = "options",cascade = CascadeType.ALL)
-    private List<OptionLabel> optionLabel;
-
+    @ManyToOne
+    @JoinColumn(name = "options_id")
+    private Options options;
 }
